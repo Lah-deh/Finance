@@ -1,16 +1,43 @@
-# React + Vite
+# Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, dark-themed finance dashboard built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Live Demo
+https://finance-lake-kappa.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Repository
+https://github.com/Lah-deh/Finance
 
-## React Compiler
+## Setup Instructions
+npm install
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Approach
+I used React with useReducer and Context API for global state management,
+keeping all transactions, filters, and role selection in a single store.
+Data persists across sessions via localStorage.
 
-## Expanding the ESLint configuration
+## Features
+- **Dashboard** :Summary cards (balance, income, expenses, savings rate),
+  area chart for balance trend, donut chart for spending breakdown,
+  recent transactions list
+- **Transactions** :Full table with search, filter by type/category,
+  sort by date or amount, CSV export
+- **Insights** : Top spending category, average monthly spend, savings rate,
+  best month, month-over-month comparison, bar chart, category analysis
+- **Role-Based UI** :Toggle between Admin (add/edit/delete transactions)
+  and Viewer (read-only) from the navbar dropdown
+- **Data Persistence** : Transactions saved to localStorage
+- **Responsive** :Works on mobile, tablet, and desktop
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- React
+- Vite
+- Tailwind CSS
+- Recharts (charts)
+- Lucide React (icons)
+
+## State Management
+Global state is managed with React's useReducer + Context API.
+State includes: transactions array, active role, active page, and filter settings.
+All transaction mutations (add/edit/delete) also sync to localStorage.
